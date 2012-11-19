@@ -231,10 +231,10 @@ set wildignore+=*.DS_STORE
 noremap <C-k> <C-b>
 noremap <C-j> <C-f>
 " Window-change actions.
-noremap <Up> <C-w>k
-noremap <Down> <C-w>j
-noremap <Left> <C-w>h
-noremap <Right> <C-w>l
+"noremap <Up> <C-w>k
+"noremap <Down> <C-w>j
+"noremap <Left> <C-w>h
+"noremap <Right> <C-w>l
 
 " Misc.
 let mapleader=","  " Set <leader> key to comma.
