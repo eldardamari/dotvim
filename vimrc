@@ -174,6 +174,14 @@ set shortmess=at  " Shortens messages in status line, truncates long messages.
 set laststatus=2  " Always show status line.
 set showcmd  " Display an incomplete command in status line.
 
+"Windowd Explorer -  Window navigator
+
+"Bundle "fholgado/minibufexpl.vim"
+Bundle "techlivezheng/vim-plugin-minibufexpl"
+let g:miniBufExplModSelTarget = 1  " Don't open buffer in a non-modifiable buffer (e.g. 
+let g:MiniBufExplCheckDupeBufs = 0 " For working with many buffers simultanly.
+
+
 " Window/buffer mangement.
 " L9 is necessary for fuzzyfinder.
 Bundle "L9"
@@ -227,8 +235,8 @@ set smartindent
 
 " Folding
 set foldenable  " Turn on folding.
-set foldmethod=marker  " Fold on the marker.
-set foldlevel=100  " Don't autofold anything (but I can still fold manually).
+set foldmethod=syntax  " Fold on the marker.
+set foldlevel=0  " Don't autofold anything (but I can still fold manually).
 set foldopen=block,hor,tag,percent,mark,quickfix  " Which movements open folds.
 
 " Backup
