@@ -28,28 +28,8 @@ Bundle "tomasr/molokai"
 Bundle "jelera/vim-gummybears-colorscheme.git"
 Bundle "nanotech/jellybeans.vim"
 
-" Web
-Bundle "pangloss/vim-javascript"
-Bundle "lepture/vim-jinja"
-"Bundle "lepture/vim-css"
-Bundle "cakebaker/scss-syntax.vim"
-Bundle "groenewege/vim-less"
+" HTML
 Bundle "matchit.zip"
-
-" Python
-Bundle "hynek/vim-python-pep8-indent"
-Bundle "python.vim--Vasiliev"
-
-" Haskell
-Bundle "bitc/lushtags"
-Bundle "Twinside/vim-haskellConceal"
-Bundle "Twinside/vim-hoogle"
-Bundle "indenthaskell.vim"
-"Bundle "haskell.vim"
-Bundle "syntaxhaskell.vim"
-
-" Markdown
-Bundle "tpope/vim-markdown"
 
 " Syntax
 Bundle "scrooloose/syntastic"
@@ -104,56 +84,13 @@ set ttyfast  " Fast drawing.
 set scrolloff=3  " Number of lines to keep above/below cursor when scrolling.
 "set debug=msg  " Show Vim error messages.
 
-" Web
-autocmd BufWinEnter *.json,*jshintrc setfiletype javascript
-autocmd BufWinEnter *.scss setfiletype scss
-autocmd BufWinEnter *.less setfiletype less
-autocmd BufWinEnter *.html,*.htm setfiletype html
-autocmd FileType css,scss,less set omnifunc=csscomplete#CompleteCSS
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType html,jinja set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType html setlocal syntax=jinja
-autocmd FileType html,css,scss,less setlocal expandtab smarttab tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType html,jinja runtime! macros/matchit.vim
-autocmd BufWritePost *.scss,*.sass !compass compile ../ <afile> --force
-
-" Python
-let python_highlight_all=1  " Enable all plugin's highlighting.
-let python_slow_sync=1  " For fast machines.
-let python_print_as_function=1  " Color 'print' function.
-autocmd FileType python setlocal linebreak nosmartindent  " nosmartindent for comment indentation problem.
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-set wildignore+=*.pyc,*.pyo
-set wildignore+=*.egg,*.egg-info
-
-" Haskell
-"let g:haskell_indent_if=3
-"let g:haskell_indent_case=5
-let hs_highlight_boolean=1
-let hs_highlight_types=1
-let hs_highlight_debug=1
-let hs_allow_hash_operator=1
-set wildignore+=*.hi,*.o
-
 " C++
 let g:syntastic_cpp_check_header=1
 let g:syntastic_cpp_include_dirs=[ 'includes', 'include', 'inc',  'headers' ]
 let g:syntastic_cpp_auto_refresh_includes=1
 let g:syntastic_cpp_remove_include_errors=1
 let g:syntastic_cpp_compiler_options=' -Wall -Wextra -Weffc++'
-" Run `make ../makefile` if exists, else use `g++`.
-"autocmd FileType cpp setlocal makeprg=[[\ -f\ ../makefile\ ]]\ &&\ make\ ../makefile\ -C\ ..\ \\\|\\\|\ g++
-" Run output file after successful make.
-"autocmd QuickfixCmdPost make call AfterMakeC()
-"function! AfterMakeC()
-    "if len(getqflist()) == 0
-        "!../bin/runme
-    "endif
-"endfunction
 set wildignore+=*.o,*.a
-
-" Markdown
-autocmd BufWinEnter *.md,*.markdown setfiletype markdown
 
 " Syntastic
 "let g:syntastic_mode_map = {
@@ -189,19 +126,10 @@ nnoremap <silent> \ :TagbarToggle<CR>
 " Search tag list from current dir up till root.
 set tags=./tags;/
 
-
 " Status Line
 set shortmess=at  " Shortens messages in status line, truncates long messages.
 set laststatus=2  " Always show status line.
 set showcmd  " Display an incomplete command in status line.
-
-"Windowd Explorer -  Window navigator
-
-"Bundle "fholgado/minibufexpl.vim"
-Bundle "techlivezheng/vim-plugin-minibufexpl"
-let g:miniBufExplModSelTarget = 1  " Don't open buffer in a non-modifiable buffer (e.g. 
-let g:MiniBufExplCheckDupeBufs = 0 " For working with many buffers simultanly.
-
 
 " Window/buffer mangement.
 " L9 is necessary for fuzzyfinder.
@@ -217,7 +145,7 @@ nnoremap <Leader>3 :FufBufferTagAll<CR>
 " Mini buffer explorer
 let g:miniBufExplModSelTarget = 1  " Don't open buffer in a non-modifiable buffer (e.g. TagList window).
 let g:miniBufExplCheckDupeBufs = 0  " For working with many buffers simultaneously.
-let g:miniBufExplShowBufNumbers = 0  " No buffer numbers.
+let g:miniBufExplShowBufNumbers = 1  " No buffer numbers.
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg
 hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
 hi MBEVisibleChanged guifg=#F1266F guibg=fg
@@ -243,7 +171,7 @@ set wildmode=list:longest  " List options when hitting tab, and match longest co
 set encoding=utf-8
 set nowrap  " No line wrapping.
 set linebreak  " Wrap at word.
-set textwidth=74  " Desirable text width. Used for text auto-wrapping. 0 means no auto-wrapping.
+set textwidth=80  " Desirable text width. Used for text auto-wrapping. 0 means no auto-wrapping.
 set cc=+1  " Highlight one column AFTER 'textwidth'.
 " Enable auto-wrapping comments, comment leader auto-insertion
 " in <Insert> mode, auto-format paragraphs, keep last line indentation.
