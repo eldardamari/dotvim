@@ -219,7 +219,7 @@ nnoremap <Leader>3 :FufBufferTagAll<CR>
 " Mini buffer explorer
 let g:miniBufExplModSelTarget = 1  " Don't open buffer in a non-modifiable buffer (e.g. TagList window).
 let g:miniBufExplCheckDupeBufs = 0  " For working with many buffers simultaneously.
-let g:miniBufExplShowBufNumbers = 0  " No buffer numbers.
+let g:miniBufExplShowBufNumbers = 1  " Buffer numbers.
 
 " Searching
 "set hlsearch  " Highlight search.
@@ -317,7 +317,7 @@ set wildignore+=*.DS_STORE
 noremap <C-k> <C-b>
 noremap <C-j> <C-f>
 " Window-change actions.
-noremap <Up> <C-w>k
-noremap <Down> <C-w>j
-noremap <Left> <C-w>h
-noremap <Right> <C-w>l
+"noremap <Up> <C-w>k
+"noremap <Down> <C-w>j
+"noremap <Left> <C-w>h
+"noremap <Right> <C-w>l
