@@ -26,29 +26,9 @@ Bundle "gmarik/vundle"
 " Colors
 Bundle "nanotech/jellybeans.vim"
 
-" Web
-Bundle "pangloss/vim-javascript"
-Bundle "lepture/vim-jinja"
-"Bundle "lepture/vim-css"
-Bundle "cakebaker/scss-syntax.vim"
-Bundle "groenewege/vim-less"
+" HTML
 Bundle "matchit.zip"
 Bundle "ap/vim-css-color"
-
-" Python
-Bundle "hynek/vim-python-pep8-indent"
-Bundle "python.vim--Vasiliev"
-
-" Haskell
-Bundle "bitc/lushtags"
-Bundle "Twinside/vim-haskellConceal"
-Bundle "Twinside/vim-hoogle"
-Bundle "indenthaskell.vim"
-"Bundle "haskell.vim"
-Bundle "syntaxhaskell.vim"
-
-" Markdown
-Bundle "tpope/vim-markdown"
 
 " Syntax
 Bundle "scrooloose/syntastic"
@@ -112,56 +92,13 @@ set ttyfast  " Fast drawing.
 set scrolloff=3  " Number of lines to keep above/below cursor when scrolling.
 "set debug=msg  " Show Vim error messages.
 
-" Web
-autocmd BufWinEnter *.json,*jshintrc setfiletype javascript
-autocmd BufWinEnter *.scss setfiletype scss
-autocmd BufWinEnter *.less setfiletype less
-autocmd BufWinEnter *.html,*.htm setfiletype html
-autocmd FileType css,scss,less set omnifunc=csscomplete#CompleteCSS
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType html,jinja set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType html setlocal syntax=jinja
-autocmd FileType html,css,scss,less setlocal expandtab smarttab tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType html,jinja runtime! macros/matchit.vim
-autocmd BufWritePost *.scss,*.sass !compass compile ../ <afile> --force
-
-" Python
-let python_highlight_all=1  " Enable all plugin's highlighting.
-let python_slow_sync=1  " For fast machines.
-let python_print_as_function=1  " Color 'print' function.
-autocmd FileType python setlocal linebreak nosmartindent  " nosmartindent for comment indentation problem.
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-set wildignore+=*.pyc,*.pyo
-set wildignore+=*.egg,*.egg-info
-
-" Haskell
-"let g:haskell_indent_if=3
-"let g:haskell_indent_case=5
-let hs_highlight_boolean=1
-let hs_highlight_types=1
-let hs_highlight_debug=1
-let hs_allow_hash_operator=1
-set wildignore+=*.hi,*.o
-
 " C++
 let g:syntastic_cpp_check_header=1
 let g:syntastic_cpp_include_dirs=[ 'includes', 'include', 'inc',  'headers' ]
 let g:syntastic_cpp_auto_refresh_includes=1
 let g:syntastic_cpp_remove_include_errors=1
 let g:syntastic_cpp_compiler_options=' -Wall -Wextra -Weffc++'
-" Run `make ../makefile` if exists, else use `g++`.
-"autocmd FileType cpp setlocal makeprg=[[\ -f\ ../makefile\ ]]\ &&\ make\ ../makefile\ -C\ ..\ \\\|\\\|\ g++
-" Run output file after successful make.
-"autocmd QuickfixCmdPost make call AfterMakeC()
-"function! AfterMakeC()
-    "if len(getqflist()) == 0
-        "!../bin/runme
-    "endif
-"endfunction
 set wildignore+=*.o,*.a
-
-" Markdown
-autocmd BufWinEnter *.md,*.markdown setfiletype markdown
 
 " Syntastic
 "let g:syntastic_mode_map = {
