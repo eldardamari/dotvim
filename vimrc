@@ -51,7 +51,7 @@ Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-surround"
 Bundle "AutoTag"
 Bundle "AutoComplPop"
-Bundle "embear/vim-localvimrc"
+"Bundle "embear/vim-localvimrc"
 "Bundle "ryan-cf/netrw"
 
 filetype plugin indent on  " Automatically detect file types, and enable file-type-specific plugins and indentation.
@@ -118,7 +118,7 @@ set statusline+=%*
 nnoremap <silent> ` :Errors<CR>
 
 " Local .vimrc
-let localvimrc_ask = 0  " Don't ask for permission to load, just do it.
+"let localvimrc_ask = 0  " Don't ask for permission to load, just do it.
 
 " Camelcase motion
 map <silent> w <Plug>CamelCaseMotion_w
@@ -148,7 +148,7 @@ let g:fuf_modesDisable = []
 let g:fuf_ignoreCase = 1
 let g:fuf_timeFormat = ''  " Remove time string.
 let g:fuf_maxMenuWidth = 70
-"let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
+let g:fuf_file_exclude = '\v\~$|\.(exe|dll|bak|orig|swp|o|a|pyc|class)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
 nnoremap <Leader>1 :FufBuffer<CR>
 nnoremap <Leader>2 :FufFileWithCurrentBufferDir<CR>
 nnoremap <Leader>3 :FufBufferTagAll<CR>
