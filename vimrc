@@ -9,6 +9,8 @@
 
 " Initialization / Vundle Plugin Mangaer
 set nocompatible  " Disable vi compatibility (more efficient, and besides - we're using non-vi tricks here).
+" Configure for pathogen&autoload  - 17/3/13
+silent! call pathogen@infect()
 set fileformats=unix,dos,mac  " Set file end-of-line priority.
 filetype off
 
@@ -45,6 +47,8 @@ Bundle "L9"
 Bundle "FuzzyFinder"
 "Bundle "fholgado/minibufexpl.vim"
 Bundle "techlivezheng/vim-plugin-minibufexpl"
+
+"Text"
 
 " Misc
 Bundle "tpope/vim-fugitive"
@@ -258,3 +262,6 @@ noremap <C-j> <C-f>
 "noremap <Down> <C-w>j
 "noremap <Left> <C-w>h
 "noremap <Right> <C-w>l
+
+" Save on :W as well
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W') ? ('w'):('W'))
