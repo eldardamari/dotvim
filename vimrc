@@ -94,6 +94,7 @@ endif
 set title  " Show title in app title bar.
 set ttyfast  " Fast drawing.
 set scrolloff=3  " Number of lines to keep above/below cursor when scrolling.
+set scroll=5     " Number of lines to junp using CTRL-U/D"
 "set debug=msg  " Show Vim error messages.
 
 " C++
@@ -265,3 +266,6 @@ noremap <C-j> <C-f>
 
 " Save on :W as well
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W') ? ('w'):('W'))
+
+" Save on :Wall as well
+cnoreabbrev <expr> Wall ((getcmdtype() is# ':' && getcmdline() is# 'Wall') ? ('wall'):('Wall'))
