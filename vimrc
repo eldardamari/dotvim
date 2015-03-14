@@ -35,8 +35,10 @@ Bundle "ap/vim-css-color"
 " Syntax
 Bundle "scrooloose/syntastic"
 Bundle "scrooloose/nerdcommenter"
+Bundle "fatih/vim-go"
 
 " Navigation
+Bundle "tpope/vim-sensible"
 Bundle "IndexedSearch"
 Bundle "camelcasemotion"
 Bundle "Lokaltog/vim-powerline"
@@ -68,11 +70,11 @@ set background=dark
 " Set 'TODO' & 'FIXME' strings to be bold and standout as hell. Works for jellybeans color scheme only.
 let g:jellybeans_overrides = {
             \ 'Todo': {
-                \ 'guifg': 'ff4500',
-                \ 'guibg': 'eeee00',
-                \ 'ctermfg': '196',
-                \ 'ctermbg': '226',
-                \ 'attr': 'standout'
+                \ 'guifg'   : 'ff4500',
+                \ 'guibg'   : 'eeee00',
+                \ 'ctermfg' : '196',
+                \ 'ctermbg' : '226',
+                \ 'attr'    : 'standout'
             \ }
         \ }
 " Misc color overrides.
@@ -94,7 +96,7 @@ endif
 set title  " Show title in app title bar.
 set ttyfast  " Fast drawing.
 set scrolloff=3  " Number of lines to keep above/below cursor when scrolling.
-set scroll=5     " Number of lines to junp using CTRL-U/D"
+set scroll=5     " Number of lines to junp using CTRL-U/D
 "set debug=msg  " Show Vim error messages.
 
 " C++
@@ -204,7 +206,7 @@ set smartindent
 
 " Folding
 set foldenable  " Turn on folding.
-set foldmethod=syntax  " Fold on the marker.
+set foldmethod=manual " Fold on the marker.
 set foldlevel=0  " Fold everything when opening a file.
 "set foldnestmax=1  " Don't fold inner blocks.
 set foldopen=block,hor,tag,percent,mark,quickfix  " Which movements open folds.
@@ -269,3 +271,9 @@ cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W') ? ('w'):('W
 
 " Save on :Wall as well
 cnoreabbrev <expr> Wall ((getcmdtype() is# ':' && getcmdline() is# 'Wall') ? ('wall'):('Wall'))
+
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
